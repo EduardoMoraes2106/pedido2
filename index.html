@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pedido</title>
+    <style>
+        body {
+            background-color: cadetblue;
+        }
+        #conteudo {
+        width: 100%;
+        height: 100%;
+        position: fixed;
+        margin: 90px auto;
+        top: 0;
+        left: 0;
+        padding: 10px;
+        text-align: center;
+        font-family: sans-serif;
+        color: aliceblue;
+    }
+
+    .btn {
+        background: black;
+        color: white;
+        border: none;
+        padding: 10px;
+        width: 80px;
+        border-radius: 5px;
+    }
+    </style>
+</head>
+<body>
+    <div id="conteudo">
+        <h2>Aceita sair pelo mundo sem rumo?</h2>
+        <button class="btn" onclick="sim()">Sim</button>
+        <button class="btn" onclick="desviar(this)" onmouseover="desviar(this)">Não</button>
+    </div>
+    <script>
+        function sim(){
+            alert('Aceitou sair pelo mundo sem rumo')
+            //redirecionamento para um URL apos clicar em sim
+            location.href = "https://youtu.be/poAF6QLdmmQ"
+        }
+
+        function desviar(btn) {
+            //btn declarado na função
+            btn.style.position = 'absolute'
+            btn.style.bottom = geraPosicao(10, 90)
+            btn.style.left = geraPosicao(10, 90)
+            console.log('ops desviei....')
+
+        }
+
+        function geraPosicao(min, max) {
+            return(Math.random()*(max - min)+ min) + "%"
+        }
+    </script>
+</body>
+</html>
